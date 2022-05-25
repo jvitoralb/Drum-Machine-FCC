@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/style.css">
+    <script src="https://kit.fontawesome.com/2e440afa55.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Gwen Quotes Machine</title>
+</head>
+
+<body class="bg-info">
+    <header id="header" class="py-1 border-bottom border-dark shadow">
+        <div class="container-fluid">
+            <div class="row">
+                <h1 class="text-center">Gwen Quotes Machine</h1>
+            </div>
+        </div>
+    </header>
+    <main id="main" class="d-flex flex-column justify-content-center">
+        <div id="drum-machine" class="container p-3 bg-light shadow">
+            <div class="row p-3">
+                <div id="display" class="col rounded">
+                    <h1 id="display-text" class="text-end fst-italic">Looking for a tailor?</h1>
+                </div>
+            </div>
+            <div id="pads" class="row my-3 px-3 d-grid gap-3">
+                <div class="col btn-group">
+                    <a id="Q" class="btn btn-info drum-pad fw-semibold">
+                        Q
+                        <audio id="Q" class="clip" value="The struggle"
+                            src="/audio/The struggle is worth it..ogg"></audio>
+                    </a>
+                    <a id="W" class="btn btn-info drum-pad fw-semibold">
+                        W
+                        <audio id="W" class="clip" value="I get to move my hands and feet"
+                            src="/audio/Still can't believe I get to move my hands and feet all on my own!.ogg"></audio>
+                    </a>
+                    <a id="E" class="btn btn-info drum-pad fw-semibold">
+                        E
+                        <audio id="E" class="clip" value="How sad"
+                            src="/audio/How sad, you must be broken on the inside..ogg"></audio>
+                    </a>
+                </div>
+                <div class="col btn-group">
+                    <a id="A" class="btn btn-info drum-pad fw-semibold">
+                        A
+                        <audio id="A" class="clip" value="Life's charm"
+                            src="/audio/No one said life would be easy. That is its charm, to be sure..ogg"></audio>
+                    </a>
+                    <a id="S" class="btn btn-info drum-pad fw-semibold">
+                        S
+                        <audio id="S" class="clip" value="Good Old times"
+                            src="/audio/Just like the good old times. Sweet, simple, and out of control!.ogg"></audio>
+                    </a>
+                    <a id="D" class="btn btn-info drum-pad fw-semibold">
+                        D
+                        <audio id="D" class="clip" value="You are bad"
+                            src="/audio/I heard something. You are bad' They said it, not me..ogg"></audio>
+                    </a>
+                </div>
+                <div class="col btn-group">
+                    <a id="Z" class="btn btn-info drum-pad fw-semibold">
+                        Z
+                        <audio id="Z" class="clip" value="Endurance"
+                            src="/audio/I've certainly endured far worse than this..ogg"></audio>
+                    </a>
+                    <a id="X" class="btn btn-info drum-pad fw-semibold">
+                        X
+                        <audio id="X" class="clip" value="As many as takes"
+                            src="/audio/I'll break as many needles as it takes to get this right..ogg"></audio>
+                    </a>
+                    <a id="C" class="btn btn-info drum-pad fw-semibold">
+                        C
+                        <audio id="C" class="clip" value="No matter"
+                            src="/audio/I sense their resolve. No matter, mine will be stronger..ogg"></audio>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col d-flex justify-content-evenly fs-2 py-3">
+                    <a href="https://github.com/jvitoralb" target="_blank" class="social">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jvitor-albuquerque/" target="_blank" class="social">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/src/main.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

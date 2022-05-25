@@ -1,0 +1,23 @@
+#drum-machine {
+    max-width: 590px;
+}
+
+#main {
+    height: 70vh;
+}
+
+#display {
+    border: 1px solid #112233;
+}
+
+.btn:hover {
+    border: 1px solid #112233;
+}
+
+.social {
+    color: #112233;
+}
+
+.social:hover {
+    color: #fff;
+}
