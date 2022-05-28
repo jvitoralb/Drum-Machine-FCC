@@ -24,64 +24,84 @@
     </header>
     <main id="main" class="d-flex flex-column justify-content-center">
         <div id="drum-machine" class="container p-3 bg-light shadow">
-            <div class="row p-3">
+            <div class="row px-3 py-2">
                 <div id="display" class="col rounded">
-                    <h3 id="display-text" class="pt-1 text-end fst-italic">Looking for a tailor?</h3>
+                    <h1 id="display-text" class="text-end fst-italic">Looking for a tailor?</h1>
                 </div>
             </div>
-            <div id="pads" class="row my-3 px-3 d-grid gap-3">
-                <div class="col btn-group">
-                    <a id="Q" class="btn btn-info drum-pad fw-semibold">
-                        Q
-                        <audio id="Q" class="clip" value="The struggle"
-                            src="./audio/the-struggle.ogg"></audio>
-                    </a>
-                    <a id="W" class="btn btn-info drum-pad fw-semibold">
-                        W
-                        <audio id="W" class="clip" value="I get to move my hands and feet"
-                            src="./audio/move-hands-and-feet.ogg"></audio>
-                    </a>
-                    <a id="E" class="btn btn-info drum-pad fw-semibold">
-                        E
-                        <audio id="E" class="clip" value="How sad"
-                            src="./audio/how-sad.ogg"></audio>
-                    </a>
+            <div id="pads" class="row my-3 px-3 d-flex justify-content-evenly">
+                <div class="col-md-8 d-flex flex-column">
+                    <div class="col btn-group">
+                        <a id="Q" class="btn btn-info drum-pad fw-semibold">
+                            Q
+                            <audio id="Q" class="clip" value="The struggle"
+                                src="./audio/the-struggle.ogg"></audio>
+                        </a>
+                        <a id="W" class="btn btn-info drum-pad fw-semibold">
+                            W
+                            <audio id="W" class="clip" value="I get to move my hands and feet"
+                                src="./audio/move-hands-and-feet.ogg"></audio>
+                        </a>
+                        <a id="E" class="btn btn-info drum-pad fw-semibold">
+                            E
+                            <audio id="E" class="clip" value="How sad"
+                                src="./audio/how-sad.ogg"></audio>
+                        </a>
+                    </div>
+                    <div class="col py-3 btn-group">
+                        <a id="A" class="btn btn-info drum-pad fw-semibold">
+                            A
+                            <audio id="A" class="clip" value="Life's charm"
+                                src="./audio/life-charm.ogg"></audio>
+                        </a>
+                        <a id="S" class="btn btn-info drum-pad fw-semibold">
+                            S
+                            <audio id="S" class="clip" value="Good Old times"
+                                src="./audio/good-old-times.ogg"></audio>
+                        </a>
+                        <a id="D" class="btn btn-info drum-pad fw-semibold">
+                            D
+                            <audio id="D" class="clip" value="You are bad"
+                                src="./audio/you-are-bad.ogg"></audio>
+                        </a>
+                    </div>
+                    <div class="col btn-group">
+                        <a id="Z" class="btn btn-info drum-pad fw-semibold">
+                            Z
+                            <audio id="Z" class="clip" value="Endurance"
+                                src="./audio/endurance.ogg"></audio>
+                        </a>
+                        <a id="X" class="btn btn-info drum-pad fw-semibold">
+                            X
+                            <audio id="X" class="clip" value="As many as it takes"
+                                src="./audio/as-many-as-it-takes.ogg"></audio>
+                        </a>
+                        <a id="C" class="btn btn-info drum-pad fw-semibold">
+                            C
+                            <audio id="C" class="clip" value="No matter"
+                                src="./audio/no-matter.ogg"></audio>
+                        </a>
+                    </div>
                 </div>
-                <div class="col btn-group">
-                    <a id="A" class="btn btn-info drum-pad fw-semibold">
-                        A
-                        <audio id="A" class="clip" value="Life's charm"
-                            src="./audio/life-charm.ogg"></audio>
-                    </a>
-                    <a id="S" class="btn btn-info drum-pad fw-semibold">
-                        S
-                        <audio id="S" class="clip" value="Good Old times"
-                            src="./audio/good-old-times.ogg"></audio>
-                    </a>
-                    <a id="D" class="btn btn-info drum-pad fw-semibold">
-                        D
-                        <audio id="D" class="clip" value="You are bad"
-                            src="./audio/you-are-bad.ogg"></audio>
-                    </a>
-                </div>
-                <div class="col btn-group">
-                    <a id="Z" class="btn btn-info drum-pad fw-semibold">
-                        Z
-                        <audio id="Z" class="clip" value="Endurance"
-                            src="./audio/endurance.ogg"></audio>
-                    </a>
-                    <a id="X" class="btn btn-info drum-pad fw-semibold">
-                        X
-                        <audio id="X" class="clip" value="As many as it takes"
-                            src="./audio/as-many-as-it-takes.ogg"></audio>
-                    </a>
-                    <a id="C" class="btn btn-info drum-pad fw-semibold">
-                        C
-                        <audio id="C" class="clip" value="No matter"
-                            src="./audio/no-matter.ogg"></audio>
-                    </a>
+                <div class="col-md-4 px-3 d-flex justify-content-evenly">
+                    <div class="row px-3">
+                        <div class="col">
+                            <label for="volume-control" class=" pt-1 fw-semibold">Volume</label>
+                            <input type="range" id="volume-control" min="0" max="10" value="5" class="form-range">
+                        </div>
+                        <div id="switch" class="col align-self-end d-flex justify-content-end">
+                            <div class="btn-group shadow-sm" role="group" aria-label="Basic radio toggle button group">
+                                <input type="radio" class="btn-check" name="btnradio" id="switchOn" autocomplete="off">
+                                <label class="btn btn-outline-info fw-semibold" for="switchOn">On</label>
+                                <input type="radio" class="btn-check" name="btnradio" id="switchOff" autocomplete="off"
+                                    checked>
+                                <label class="btn btn-outline-info fw-semibold" for="switchOff">Off</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
     </main>
     <footer id="footer">

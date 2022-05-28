@@ -1,18 +1,41 @@
+let audioVolume = 0.5;
 let audioStatus;
 let audioPlayed;
 let audioName;
 
-$(document).on('keydown', function(e) {
-    let keyID = e.key.toUpperCase();
-    checkAudioStatus();
-    playAudio(keyID);
-});
+$('#switch').on('click', function(e) {
+    let switchBtn = e.target.id;
 
-$('.drum-pad').on('click', function() {
-    let padID = $(this).attr('id');
+    if (switchBtn === 'switchOn') {
+        $('.drum-pad').on('click', handlePadKey);
+        $(document).on('keydown', filterKey);
+    } else if (switchBtn === 'switchOff') {
+        $('.drum-pad').off('click', handlePadKey);
+        $(document).off('keydown', filterKey);
+        checkAudioStatus();
+        updatePadDisplay('Looking for a tailor?');
+    }
+})
+
+function filterKey(e) {
+    $('.drum-pad').each(function() {
+        if (e.key.toUpperCase() === $(this).attr('id')) {
+            handlePadKey(e)
+        }
+    });
+}
+
+function handlePadKey(e) {
+    let padKey;
+
+    if (e.type === 'keydown') {
+        padKey = e.key.toUpperCase();
+    } else if (e.type === 'click') {
+        padKey = $(this).attr('id');
+    }
     checkAudioStatus();
-    playAudio(padID);
-});
+    playAudio(padKey);
+}
 
 function playAudio(padClicked) {
     $('.clip').each(function() {
@@ -21,19 +44,27 @@ function playAudio(padClicked) {
             audioName = $(this).attr('value');
             $(this).on('playing ended', updateAudioStatus);
             audioPlayed = $(this).get(0);
+            audioPlayed.volume = audioVolume;
             audioPlayed.play();
             return false;
         }
     });
 }
 
+$('#volume-control').on('input', function(e) {
+    let volume = e.target.value;
+    audioVolume = volume / 10;
+    audioPlayed.volume = volume / 10;
+});
+
 function updateAudioStatus(e) {
     if (e.type === 'playing') {
         audioStatus = true;
+        updatePadDisplay(audioName);
     } else if (e.type === 'ended') {
         audioStatus = false;
+        updatePadDisplay('Don\'t waste a minute!');
     }
-    updatePadDisplay();
 }
 
 function checkAudioStatus() {
@@ -43,10 +74,7 @@ function checkAudioStatus() {
     }
 }
 
-function updatePadDisplay() {
-    if (!audioStatus) {
-        return $('#display-text').html('Don\'t waste a minute!');
-    }
-    $('#display-text').html(audioName);
+function updatePadDisplay(content) {
+    $('#display-text').html(content);
 }
 
